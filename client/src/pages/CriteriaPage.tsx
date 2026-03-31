@@ -5,8 +5,14 @@ export default function CriteriaPage() {
   const params = useParams<{ id: string }>();
   const criteriaId = parseInt(params.id || "0");
 
-  const { data: criteriaList } = trpc.criteria.byDomain.useQuery({ domainId: 0 }, { enabled: false });
+  const { data: criteriaInfo } = trpc.criteria.getById.useQuery({ id: criteriaId });
   const { data: indicators, isLoading } = trpc.indicators.byCriteria.useQuery({ criteriaId });
+
+  // ترتيب المؤشرات حسب orderIndex ثم id لضمان الترتيب الصحيح
+  const sortedIndicators = [...(indicators ?? [])].sort((a, b) => {
+    if (a.orderIndex !== b.orderIndex) return a.orderIndex - b.orderIndex;
+    return a.id - b.id;
+  });
 
   return (
     <div className="min-h-screen flex flex-col" style={{ fontFamily: "'Cairo', 'Tajawal', sans-serif" }}>
@@ -22,7 +28,7 @@ export default function CriteriaPage() {
             </button>
           </Link>
           <span className="text-gray-300">/</span>
-          <span className="text-sm text-gray-500">المؤشرات</span>
+          <span className="text-sm font-bold text-blue-900 truncate max-w-xs">{criteriaInfo?.name ?? "المؤشرات"}</span>
         </div>
       </header>
 
@@ -35,10 +41,22 @@ export default function CriteriaPage() {
           <div className="inline-block bg-amber-400/20 border border-amber-400/40 text-amber-300 text-xs font-bold px-4 py-1 rounded-full mb-4">
             مؤشرات المعيار
           </div>
+          {criteriaInfo?.code && (
+            <div className="text-amber-300 text-sm font-mono font-bold mb-2" dir="ltr">
+              {criteriaInfo.code}
+            </div>
+          )}
           <h1 className="text-2xl md:text-3xl font-extrabold text-white">
-            مؤشرات المعيار
+            {criteriaInfo?.name ?? "مؤشرات المعيار"}
           </h1>
-          <p className="text-blue-200 text-sm mt-2">اختر المؤشر لرفع الشواهد والأدلة</p>
+          <p className="text-blue-200 text-sm mt-2">
+            اختر المؤشر لرفع الشواهد والأدلة
+            {sortedIndicators.length > 0 && (
+              <span className="mr-2 bg-white/10 px-2 py-0.5 rounded-full text-xs">
+                {sortedIndicators.length} مؤشر
+              </span>
+            )}
+          </p>
         </div>
       </section>
 
@@ -54,13 +72,18 @@ export default function CriteriaPage() {
             <div className="flex justify-center py-16">
               <div className="w-10 h-10 border-4 border-blue-200 border-t-blue-700 rounded-full animate-spin" />
             </div>
+          ) : sortedIndicators.length === 0 ? (
+            <div className="text-center py-16 text-gray-400">
+              <div className="text-4xl mb-3">📋</div>
+              <p>لا توجد مؤشرات لهذا المعيار</p>
+            </div>
           ) : (
             <div className="space-y-3">
-              {(indicators ?? []).map((indicator, idx) => (
+              {sortedIndicators.map((indicator, idx) => (
                 <Link key={indicator.id} href={`/indicator/${indicator.id}`}>
                   <div className="group bg-white rounded-xl shadow-sm border border-gray-100 hover:border-amber-400 hover:shadow-md transition-all duration-200 cursor-pointer p-5">
                     <div className="flex items-start gap-4">
-                      <div className="w-8 h-8 rounded-lg flex items-center justify-center text-white font-bold text-xs flex-shrink-0 mt-0.5"
+                      <div className="w-9 h-9 rounded-lg flex items-center justify-center text-white font-bold text-sm flex-shrink-0 mt-0.5"
                         style={{ background: "linear-gradient(135deg, #b45309, #f59e0b)" }}>
                         {idx + 1}
                       </div>

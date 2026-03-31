@@ -48,6 +48,14 @@ export const appRouter = router({
           .where(eq(criteria.domainId, input.domainId))
           .orderBy(asc(criteria.orderIndex));
       }),
+    getById: publicProcedure
+      .input(z.object({ id: z.number() }))
+      .query(async ({ input }) => {
+        const db = await getDb();
+        if (!db) return null;
+        const [criterion] = await db.select().from(criteria).where(eq(criteria.id, input.id));
+        return criterion ?? null;
+      }),
   }),
 
   // المؤشرات

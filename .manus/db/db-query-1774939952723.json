@@ -1,0 +1,255 @@
+{
+  "query": "\nSELECT i.id, i.criteriaId, i.code, i.orderIndex, c.name as criteriaName\nFROM indicators i\nJOIN criteria c ON i.criteriaId = c.id\nWHERE i.criteriaId >= 5\nORDER BY i.criteriaId, i.orderIndex, i.id;\n",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway05.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 4PFkqq5z4RnsRyE.47d61a0db41b --database Hqj5hFEzvtuPEL7dFjnaUS --execute \nSELECT i.id, i.criteriaId, i.code, i.orderIndex, c.name as criteriaName\nFROM indicators i\nJOIN criteria c ON i.criteriaId = c.id\nWHERE i.criteriaId >= 5\nORDER BY i.criteriaId, i.orderIndex, i.id;\n",
+  "rows": [
+    {
+      "id": "18",
+      "criteriaId": "5",
+      "code": "1-5-1-1",
+      "orderIndex": "1",
+      "criteriaName": "حقوق الطفل وحمايته"
+    },
+    {
+      "id": "19",
+      "criteriaId": "5",
+      "code": "1-5-1-2",
+      "orderIndex": "2",
+      "criteriaName": "حقوق الطفل وحمايته"
+    },
+    {
+      "id": "20",
+      "criteriaId": "5",
+      "code": "1-5-1-3",
+      "orderIndex": "3",
+      "criteriaName": "حقوق الطفل وحمايته"
+    },
+    {
+      "id": "21",
+      "criteriaId": "6",
+      "code": "2-1-1-1",
+      "orderIndex": "1",
+      "criteriaName": "بناء خبرات التعلم"
+    },
+    {
+      "id": "22",
+      "criteriaId": "6",
+      "code": "2-1-1-2",
+      "orderIndex": "2",
+      "criteriaName": "بناء خبرات التعلم"
+    },
+    {
+      "id": "23",
+      "criteriaId": "6",
+      "code": "2-1-1-3",
+      "orderIndex": "3",
+      "criteriaName": "بناء خبرات التعلم"
+    },
+    {
+      "id": "24",
+      "criteriaId": "6",
+      "code": "2-1-1-4",
+      "orderIndex": "4",
+      "criteriaName": "بناء خبرات التعلم"
+    },
+    {
+      "id": "25",
+      "criteriaId": "6",
+      "code": "2-1-1-5",
+      "orderIndex": "5",
+      "criteriaName": "بناء خبرات التعلم"
+    },
+    {
+      "id": "26",
+      "criteriaId": "6",
+      "code": "2-1-1-6",
+      "orderIndex": "6",
+      "criteriaName": "بناء خبرات التعلم"
+    },
+    {
+      "id": "27",
+      "criteriaId": "6",
+      "code": "2-1-1-7",
+      "orderIndex": "7",
+      "criteriaName": "بناء خبرات التعلم"
+    },
+    {
+      "id": "28",
+      "criteriaId": "6",
+      "code": "2-1-1-8",
+      "orderIndex": "8",
+      "criteriaName": "بناء خبرات التعلم"
+    },
+    {
+      "id": "29",
+      "criteriaId": "6",
+      "code": "2-1-1-9",
+      "orderIndex": "9",
+      "criteriaName": "بناء خبرات التعلم"
+    },
+    {
+      "id": "30",
+      "criteriaId": "6",
+      "code": "2-1-1-10",
+      "orderIndex": "10",
+      "criteriaName": "بناء خبرات التعلم"
+    },
+    {
+      "id": "60001",
+      "criteriaId": "6",
+      "code": "2-1-1-11",
+      "orderIndex": "11",
+      "criteriaName": "بناء خبرات التعلم"
+    },
+    {
+      "id": "31",
+      "criteriaId": "7",
+      "code": "2-2-1-1",
+      "orderIndex": "1",
+      "criteriaName": "تقويم التعلم"
+    },
+    {
+      "id": "32",
+      "criteriaId": "7",
+      "code": "2-2-1-2",
+      "orderIndex": "2",
+      "criteriaName": "تقويم التعلم"
+    },
+    {
+      "id": "33",
+      "criteriaId": "7",
+      "code": "2-2-1-3",
+      "orderIndex": "3",
+      "criteriaName": "تقويم التعلم"
+    },
+    {
+      "id": "34",
+      "criteriaId": "7",
+      "code": "2-2-1-4",
+      "orderIndex": "4",
+      "criteriaName": "تقويم التعلم"
+    },
+    {
+      "id": "35",
+      "criteriaId": "8",
+      "code": "3-1-1-1",
+      "orderIndex": "1",
+      "criteriaName": "التحصيل التعليمي"
+    },
+    {
+      "id": "36",
+      "criteriaId": "8",
+      "code": "3-1-1-2",
+      "orderIndex": "2",
+      "criteriaName": "التحصيل التعليمي"
+    },
+    {
+      "id": "37",
+      "criteriaId": "8",
+      "code": "3-1-1-3",
+      "orderIndex": "3",
+      "criteriaName": "التحصيل التعليمي"
+    },
+    {
+      "id": "38",
+      "criteriaId": "8",
+      "code": "3-1-1-4",
+      "orderIndex": "4",
+      "criteriaName": "التحصيل التعليمي"
+    },
+    {
+      "id": "39",
+      "criteriaId": "9",
+      "code": "3-2-1-1",
+      "orderIndex": "1",
+      "criteriaName": "التطور الشخصي والصحي والاجتماعي"
+    },
+    {
+      "id": "40",
+      "criteriaId": "9",
+      "code": "3-2-1-2",
+      "orderIndex": "2",
+      "criteriaName": "التطور الشخصي والصحي والاجتماعي"
+    },
+    {
+      "id": "41",
+      "criteriaId": "9",
+      "code": "3-2-1-3",
+      "orderIndex": "3",
+      "criteriaName": "التطور الشخصي والصحي والاجتماعي"
+    },
+    {
+      "id": "42",
+      "criteriaId": "9",
+      "code": "3-2-1-4",
+      "orderIndex": "4",
+      "criteriaName": "التطور الشخصي والصحي والاجتماعي"
+    },
+    {
+      "id": "43",
+      "criteriaId": "9",
+      "code": "3-2-1-5",
+      "orderIndex": "5",
+      "criteriaName": "التطور الشخصي والصحي والاجتماعي"
+    },
+    {
+      "id": "44",
+      "criteriaId": "9",
+      "code": "3-2-1-6",
+      "orderIndex": "6",
+      "criteriaName": "التطور الشخصي والصحي والاجتماعي"
+    },
+    {
+      "id": "45",
+      "criteriaId": "10",
+      "code": "4-1-1-1",
+      "orderIndex": "1",
+      "criteriaName": "المبنى المدرسي"
+    },
+    {
+      "id": "46",
+      "criteriaId": "10",
+      "code": "4-1-1-2",
+      "orderIndex": "2",
+      "criteriaName": "المبنى المدرسي"
+    },
+    {
+      "id": "47",
+      "criteriaId": "10",
+      "code": "4-1-1-3",
+      "orderIndex": "3",
+      "criteriaName": "المبنى المدرسي"
+    },
+    {
+      "id": "48",
+      "criteriaId": "10",
+      "code": "4-1-1-4",
+      "orderIndex": "4",
+      "criteriaName": "المبنى المدرسي"
+    },
+    {
+      "id": "49",
+      "criteriaId": "11",
+      "code": "4-2-1-1",
+      "orderIndex": "1",
+      "criteriaName": "الأمن والسلامة"
+    },
+    {
+      "id": "50",
+      "criteriaId": "11",
+      "code": "4-2-1-2",
+      "orderIndex": "2",
+      "criteriaName": "الأمن والسلامة"
+    },
+    {
+      "id": "51",
+      "criteriaId": "11",
+      "code": "4-2-1-3",
+      "orderIndex": "3",
+      "criteriaName": "الأمن والسلامة"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\tcriteriaId\tcode\torderIndex\tcriteriaName\n18\t5\t1-5-1-1\t1\tحقوق الطفل وحمايته\n19\t5\t1-5-1-2\t2\tحقوق الطفل وحمايته\n20\t5\t1-5-1-3\t3\tحقوق الطفل وحمايته\n21\t6\t2-1-1-1\t1\tبناء خبرات التعلم\n22\t6\t2-1-1-2\t2\tبناء خبرات التعلم\n23\t6\t2-1-1-3\t3\tبناء خبرات التعلم\n24\t6\t2-1-1-4\t4\tبناء خبرات التعلم\n25\t6\t2-1-1-5\t5\tبناء خبرات التعلم\n26\t6\t2-1-1-6\t6\tبناء خبرات التعلم\n27\t6\t2-1-1-7\t7\tبناء خبرات التعلم\n28\t6\t2-1-1-8\t8\tبناء خبرات التعلم\n29\t6\t2-1-1-9\t9\tبناء خبرات التعلم\n30\t6\t2-1-1-10\t10\tبناء خبرات التعلم\n60001\t6\t2-1-1-11\t11\tبناء خبرات التعلم\n31\t7\t2-2-1-1\t1\tتقويم التعلم\n32\t7\t2-2-1-2\t2\tتقويم التعلم\n33\t7\t2-2-1-3\t3\tتقويم التعلم\n34\t7\t2-2-1-4\t4\tتقويم التعلم\n35\t8\t3-1-1-1\t1\tالتحصيل التعليمي\n36\t8\t3-1-1-2\t2\tالتحصيل التعليمي\n37\t8\t3-1-1-3\t3\tالتحصيل التعليمي\n38\t8\t3-1-1-4\t4\tالتحصيل التعليمي\n39\t9\t3-2-1-1\t1\tالتطور الشخصي والصحي والاجتماعي\n40\t9\t3-2-1-2\t2\tالتطور الشخصي والصحي والاجتماعي\n41\t9\t3-2-1-3\t3\tالتطور الشخصي والصحي والاجتماعي\n42\t9\t3-2-1-4\t4\tالتطور الشخصي والصحي والاجتماعي\n43\t9\t3-2-1-5\t5\tالتطور الشخصي والصحي والاجتماعي\n44\t9\t3-2-1-6\t6\tالتطور الشخصي والصحي والاجتماعي\n45\t10\t4-1-1-1\t1\tالمبنى المدرسي\n46\t10\t4-1-1-2\t2\tالمبنى المدرسي\n47\t10\t4-1-1-3\t3\tالمبنى المدرسي\n48\t10\t4-1-1-4\t4\tالمبنى المدرسي\n49\t11\t4-2-1-1\t1\tالأمن والسلامة\n50\t11\t4-2-1-2\t2\tالأمن والسلامة\n51\t11\t4-2-1-3\t3\tالأمن والسلامة\n",
+  "stderr": "",
+  "execution_time_ms": 55
+}

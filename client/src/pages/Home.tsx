@@ -107,7 +107,7 @@ export default function Home() {
           <div className="w-px h-5 bg-amber-300 hidden md:block" />
           <div className="flex items-center gap-2 text-amber-800">
             <span className="text-lg">👩‍💻</span>
-            <span className="font-medium">المساعد الإداري:</span>
+            <span className="font-medium">إعداد المساعد الإداري:</span>
             <span className="font-bold">فاطمة اليوبي</span>
           </div>
         </div>

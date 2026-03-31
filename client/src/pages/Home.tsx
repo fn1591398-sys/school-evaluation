@@ -55,9 +55,8 @@ export default function Home() {
           style={{ background: "radial-gradient(circle, #f59e0b, transparent)", transform: "translate(30%, 30%)" }} />
 
         <div className="max-w-4xl mx-auto text-center relative z-10">
-          {/* Logo/Badge - وزارة التعليم */}
-          <div className="inline-flex items-center gap-3 bg-white/10 backdrop-blur border border-white/20 rounded-full px-5 py-2 mb-4 text-white text-sm font-medium">
-            <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663491308597/Hqj5hFEzvtuPEL7dFjnaUS/moe-logo-new-white_4692fc71.png" alt="وزارة التعليم" className="w-8 h-8 object-contain" />
+          {/* البرنامج الوطني - بدون شعار */}
+          <div className="inline-flex items-center bg-white/10 backdrop-blur border border-white/20 rounded-full px-5 py-2 mb-4 text-white text-sm font-medium">
             <span>البرنامج الوطني للتقويم والاعتماد المدرسي</span>
           </div>
           {/* شعار هيئة تقويم التعليم والتدريب */}

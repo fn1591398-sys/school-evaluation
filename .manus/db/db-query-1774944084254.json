@@ -1,0 +1,34 @@
+{
+  "query": "\nSELECT id, code, text, orderIndex FROM indicators WHERE criteriaId = 10 ORDER BY orderIndex;\n",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway05.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 4PFkqq5z4RnsRyE.47d61a0db41b --database Hqj5hFEzvtuPEL7dFjnaUS --execute \nSELECT id, code, text, orderIndex FROM indicators WHERE criteriaId = 10 ORDER BY orderIndex;\n",
+  "rows": [
+    {
+      "id": "45",
+      "code": "4-1-1-1",
+      "text": "توفِّر المدرسة مبنى تعليمياً يستوفي المواصفات والاشتراطات المعتمدة من حيث النوع والخدمات المساندة.",
+      "orderIndex": "1"
+    },
+    {
+      "id": "46",
+      "code": "4-1-1-2",
+      "text": "تنظِّم مبنى المدرسة ملائماً لعدد الأطفال وخصائص المرحلة العمرية، ومنهم ذوو الإعاقة.",
+      "orderIndex": "2"
+    },
+    {
+      "id": "47",
+      "code": "4-1-1-3",
+      "text": "تتوافر فصول ومعامل ملائمة للعملية التعليمية تلبي احتياجات الأطفال، ومنهم ذوو الإعاقة.",
+      "orderIndex": "3"
+    },
+    {
+      "id": "48",
+      "code": "4-1-1-4",
+      "text": "تلبِّي المرافق والتجهيزات والخدمات المساندة احتياجات الأطفال، ومنهم ذوو الإعاقة.",
+      "orderIndex": "4"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\tcode\ttext\torderIndex\n45\t4-1-1-1\tتوفِّر المدرسة مبنى تعليمياً يستوفي المواصفات والاشتراطات المعتمدة من حيث النوع والخدمات المساندة.\t1\n46\t4-1-1-2\tتنظِّم مبنى المدرسة ملائماً لعدد الأطفال وخصائص المرحلة العمرية، ومنهم ذوو الإعاقة.\t2\n47\t4-1-1-3\tتتوافر فصول ومعامل ملائمة للعملية التعليمية تلبي احتياجات الأطفال، ومنهم ذوو الإعاقة.\t3\n48\t4-1-1-4\tتلبِّي المرافق والتجهيزات والخدمات المساندة احتياجات الأطفال، ومنهم ذوو الإعاقة.\t4\n",
+  "stderr": "",
+  "execution_time_ms": 63
+}

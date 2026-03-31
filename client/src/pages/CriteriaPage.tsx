@@ -126,7 +126,7 @@ function EvidenceCount({ indicatorId }: { indicatorId: number }) {
   const { data: evidences } = trpc.evidences.byIndicator.useQuery({ indicatorId });
   const count = evidences?.length ?? 0;
   return (
-    <span className={`text-xs font-bold px-2 py-0.5 rounded-full ${count >= 8 ? "bg-green-100 text-green-700" : count > 0 ? "bg-amber-100 text-amber-700" : "bg-gray-100 text-gray-400"}`}>
+    <span className={`text-xs font-bold px-2 py-0.5 rounded-full ${count > 0 ? "bg-amber-100 text-amber-700" : "bg-gray-100 text-gray-400"}`}>
       {count} شاهد
     </span>
   );

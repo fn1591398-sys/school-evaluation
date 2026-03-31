@@ -1,0 +1,76 @@
+{
+  "query": "\nSELECT id, code, name, domainId FROM criteria ORDER BY domainId, orderIndex;\n",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway05.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 4PFkqq5z4RnsRyE.47d61a0db41b --database Hqj5hFEzvtuPEL7dFjnaUS --execute \nSELECT id, code, name, domainId FROM criteria ORDER BY domainId, orderIndex;\n",
+  "rows": [
+    {
+      "id": "1",
+      "code": "C1-1",
+      "name": "التخطيط",
+      "domainId": "1"
+    },
+    {
+      "id": "2",
+      "code": "C1-2",
+      "name": "قيادة العملية التعليمية",
+      "domainId": "1"
+    },
+    {
+      "id": "3",
+      "code": "C1-3",
+      "name": "المجتمع المدرسي",
+      "domainId": "1"
+    },
+    {
+      "id": "4",
+      "code": "C1-4",
+      "name": "التطوير المؤسسي",
+      "domainId": "1"
+    },
+    {
+      "id": "5",
+      "code": "C1-5",
+      "name": "حقوق الطفل وحمايته",
+      "domainId": "1"
+    },
+    {
+      "id": "6",
+      "code": "C2-1",
+      "name": "بناء خبرات التعلم",
+      "domainId": "2"
+    },
+    {
+      "id": "7",
+      "code": "C2-2",
+      "name": "تقويم التعلم",
+      "domainId": "2"
+    },
+    {
+      "id": "8",
+      "code": "C3-1",
+      "name": "التحصيل التعليمي",
+      "domainId": "3"
+    },
+    {
+      "id": "9",
+      "code": "C3-2",
+      "name": "التطور الشخصي والصحي والاجتماعي",
+      "domainId": "3"
+    },
+    {
+      "id": "10",
+      "code": "C4-1",
+      "name": "المبنى المدرسي",
+      "domainId": "4"
+    },
+    {
+      "id": "11",
+      "code": "C4-2",
+      "name": "الأمن والسلامة",
+      "domainId": "4"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\tcode\tname\tdomainId\n1\tC1-1\tالتخطيط\t1\n2\tC1-2\tقيادة العملية التعليمية\t1\n3\tC1-3\tالمجتمع المدرسي\t1\n4\tC1-4\tالتطوير المؤسسي\t1\n5\tC1-5\tحقوق الطفل وحمايته\t1\n6\tC2-1\tبناء خبرات التعلم\t2\n7\tC2-2\tتقويم التعلم\t2\n8\tC3-1\tالتحصيل التعليمي\t3\n9\tC3-2\tالتطور الشخصي والصحي والاجتماعي\t3\n10\tC4-1\tالمبنى المدرسي\t4\n11\tC4-2\tالأمن والسلامة\t4\n",
+  "stderr": "",
+  "execution_time_ms": 64
+}

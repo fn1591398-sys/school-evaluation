@@ -1,0 +1,9 @@
+{
+  "query": "\nSELECT i.id, i.code, i.text, i.orderIndex, c.id as criteriaId, c.code as criteriaCode\nFROM indicators i\nJOIN criteria c ON i.criteriaId = c.id\nWHERE c.code = '3-2'\nORDER BY i.orderIndex;\n",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway05.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 4PFkqq5z4RnsRyE.47d61a0db41b --database Hqj5hFEzvtuPEL7dFjnaUS --execute \nSELECT i.id, i.code, i.text, i.orderIndex, c.id as criteriaId, c.code as criteriaCode\nFROM indicators i\nJOIN criteria c ON i.criteriaId = c.id\nWHERE c.code = '3-2'\nORDER BY i.orderIndex;\n",
+  "rows": [],
+  "messages": [],
+  "stdout": "",
+  "stderr": "",
+  "execution_time_ms": 61
+}

@@ -1,0 +1,157 @@
+{
+  "query": "\nSELECT c.name as criteriaName, c.code as criteriaCode, i.code as indicatorCode, i.text as indicatorText, i.orderIndex\nFROM criteria c\nJOIN indicators i ON i.criteriaId = c.id\nWHERE c.domainId = 1\nORDER BY c.orderIndex, i.orderIndex;\n",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway05.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 4PFkqq5z4RnsRyE.47d61a0db41b --database Hqj5hFEzvtuPEL7dFjnaUS --execute \nSELECT c.name as criteriaName, c.code as criteriaCode, i.code as indicatorCode, i.text as indicatorText, i.orderIndex\nFROM criteria c\nJOIN indicators i ON i.criteriaId = c.id\nWHERE c.domainId = 1\nORDER BY c.orderIndex, i.orderIndex;\n",
+  "rows": [
+    {
+      "criteriaName": "التخطيط",
+      "criteriaCode": "C1-1",
+      "indicatorCode": "1-1-1-1",
+      "indicatorText": "تضع المدرسة خطة تشغيلية شاملة وفق أهداف تطويرية محددة.",
+      "orderIndex": "1"
+    },
+    {
+      "criteriaName": "التخطيط",
+      "criteriaCode": "C1-1",
+      "indicatorCode": "1-1-1-2",
+      "indicatorText": "تتابع المدرسة تنفيذ خططها التشغيلية، وتطورها بما يضمن تحقيق أهدافها.",
+      "orderIndex": "2"
+    },
+    {
+      "criteriaName": "قيادة العملية التعليمية",
+      "criteriaCode": "C1-2",
+      "indicatorCode": "1-2-1-1",
+      "indicatorText": "تعزِّز المدرسة القيم الإسلامية والهوية الوطنية.",
+      "orderIndex": "1"
+    },
+    {
+      "criteriaName": "قيادة العملية التعليمية",
+      "criteriaCode": "C1-2",
+      "indicatorCode": "1-2-1-2",
+      "indicatorText": "تطبِّق المدرسة قيم مهنة التعليم وأخلاقياتها، وتتابع الالتزام بها.",
+      "orderIndex": "2"
+    },
+    {
+      "criteriaName": "قيادة العملية التعليمية",
+      "criteriaCode": "C1-2",
+      "indicatorCode": "1-2-1-3",
+      "indicatorText": "تطبِّق المدرسة إجراءات محددة لدعم الانضباط المدرسي، وتتابع الالتزام بها.",
+      "orderIndex": "3"
+    },
+    {
+      "criteriaName": "قيادة العملية التعليمية",
+      "criteriaCode": "C1-2",
+      "indicatorCode": "1-2-1-4",
+      "indicatorText": "تنفِّذ المدرسة برامج وأنشطة تربوية داعمة للسلوك الإيجابي لدى الأطفال، ومنهم ذوو الإعاقة والموهوبون، وتتابعها.",
+      "orderIndex": "4"
+    },
+    {
+      "criteriaName": "قيادة العملية التعليمية",
+      "criteriaCode": "C1-2",
+      "indicatorCode": "1-2-1-5",
+      "indicatorText": "تنفِّذ المدرسة برامج وأنشطة إثرائية؛ لتطوير مواهب الأطفال، وتهيئتهم للمستقبل، وتتابعها.",
+      "orderIndex": "5"
+    },
+    {
+      "criteriaName": "قيادة العملية التعليمية",
+      "criteriaCode": "C1-2",
+      "indicatorCode": "1-2-1-6",
+      "indicatorText": "تعزِّز المدرسة بناء العلاقات الإيجابية والتعاون في المجتمع المدرسي.",
+      "orderIndex": "6"
+    },
+    {
+      "criteriaName": "المجتمع المدرسي",
+      "criteriaCode": "C1-3",
+      "indicatorCode": "1-3-1-1",
+      "indicatorText": "تعزِّز المدرسة بناء العلاقات الإيجابية والتعاون في المجتمع المدرسي.",
+      "orderIndex": "1"
+    },
+    {
+      "criteriaName": "المجتمع المدرسي",
+      "criteriaCode": "C1-3",
+      "indicatorCode": "1-3-1-2",
+      "indicatorText": "تعزِّز المدرسة مشاركة الأسرة في تعلم أطفالهم، والتحضير للمستقبل.",
+      "orderIndex": "2"
+    },
+    {
+      "criteriaName": "المجتمع المدرسي",
+      "criteriaCode": "C1-3",
+      "indicatorCode": "1-3-1-3",
+      "indicatorText": "تعزِّز المدرسة الشراكة المجتمعية لدعم التعلم والتأثير الإيجابي في المجتمع.",
+      "orderIndex": "3"
+    },
+    {
+      "criteriaName": "التطوير المؤسسي",
+      "criteriaCode": "C1-4",
+      "indicatorCode": "1-4-1-1",
+      "indicatorText": "توفِّر المدرسة كادراً تعليمياً كفؤاً ومؤهلاً بما يتسق مع المهام الموكلة له.",
+      "orderIndex": "1"
+    },
+    {
+      "criteriaName": "التطوير المؤسسي",
+      "criteriaCode": "C1-4",
+      "indicatorCode": "1-4-1-2",
+      "indicatorText": "توفِّر المدرسة كادراً إدارياً كفؤاً ومؤهلاً بما يتسق مع المهام الموكلة له.",
+      "orderIndex": "2"
+    },
+    {
+      "criteriaName": "التطوير المؤسسي",
+      "criteriaCode": "C1-4",
+      "indicatorCode": "1-4-1-3",
+      "indicatorText": "تُظهِر المدرسة الملاءة والاستدامة المالية.",
+      "orderIndex": "3"
+    },
+    {
+      "criteriaName": "التطوير المؤسسي",
+      "criteriaCode": "C1-4",
+      "indicatorCode": "1-4-1-4",
+      "indicatorText": "تدعم المدرسة منسوبيها للحصول على الرخصة المهنية، وتتابعها.",
+      "orderIndex": "4"
+    },
+    {
+      "criteriaName": "التطوير المؤسسي",
+      "criteriaCode": "C1-4",
+      "indicatorCode": "1-4-1-5",
+      "indicatorText": "تدعم المدرسة التطوير المهني لمنسوبيها وفقاً لنتائج التقويم واحتياجاتهم.",
+      "orderIndex": "5"
+    },
+    {
+      "criteriaName": "التطوير المؤسسي",
+      "criteriaCode": "C1-4",
+      "indicatorCode": "1-4-1-6",
+      "indicatorText": "تطبِّق المدرسة التقويم الذاتي المبنيَّ على المعايير المعتمدة من الهيئة بشكل مستمر.",
+      "orderIndex": "6"
+    },
+    {
+      "criteriaName": "التطوير المؤسسي",
+      "criteriaCode": "C1-4",
+      "indicatorCode": "1-4-1-7",
+      "indicatorText": "تنفِّذ المدرسة خطة التحسين بناءً على نتائج التقويم المدرسي، وتتابعها.",
+      "orderIndex": "7"
+    },
+    {
+      "criteriaName": "حقوق الطفل وحمايته",
+      "criteriaCode": "C1-5",
+      "indicatorCode": "1-5-1-1",
+      "indicatorText": "تلتزم المدرسة بالمحافظة على حقوق الأطفال، وحمايتهم.",
+      "orderIndex": "1"
+    },
+    {
+      "criteriaName": "حقوق الطفل وحمايته",
+      "criteriaCode": "C1-5",
+      "indicatorCode": "1-5-1-2",
+      "indicatorText": "توفِّر المدرسة مناخاً آمناً للتعلم والنمو نفسياً واجتماعياً.",
+      "orderIndex": "2"
+    },
+    {
+      "criteriaName": "حقوق الطفل وحمايته",
+      "criteriaCode": "C1-5",
+      "indicatorCode": "1-5-1-3",
+      "indicatorText": "تلتزم المدرسة بالمحافظة على صحة الأطفال.",
+      "orderIndex": "3"
+    }
+  ],
+  "messages": [],
+  "stdout": "criteriaName\tcriteriaCode\tindicatorCode\tindicatorText\torderIndex\nالتخطيط\tC1-1\t1-1-1-1\tتضع المدرسة خطة تشغيلية شاملة وفق أهداف تطويرية محددة.\t1\nالتخطيط\tC1-1\t1-1-1-2\tتتابع المدرسة تنفيذ خططها التشغيلية، وتطورها بما يضمن تحقيق أهدافها.\t2\nقيادة العملية التعليمية\tC1-2\t1-2-1-1\tتعزِّز المدرسة القيم الإسلامية والهوية الوطنية.\t1\nقيادة العملية التعليمية\tC1-2\t1-2-1-2\tتطبِّق المدرسة قيم مهنة التعليم وأخلاقياتها، وتتابع الالتزام بها.\t2\nقيادة العملية التعليمية\tC1-2\t1-2-1-3\tتطبِّق المدرسة إجراءات محددة لدعم الانضباط المدرسي، وتتابع الالتزام بها.\t3\nقيادة العملية التعليمية\tC1-2\t1-2-1-4\tتنفِّذ المدرسة برامج وأنشطة تربوية داعمة للسلوك الإيجابي لدى الأطفال، ومنهم ذوو الإعاقة والموهوبون، وتتابعها.\t4\nقيادة العملية التعليمية\tC1-2\t1-2-1-5\tتنفِّذ المدرسة برامج وأنشطة إثرائية؛ لتطوير مواهب الأطفال، وتهيئتهم للمستقبل، وتتابعها.\t5\nقيادة العملية التعليمية\tC1-2\t1-2-1-6\tتعزِّز المدرسة بناء العلاقات الإيجابية والتعاون في المجتمع المدرسي.\t6\nالمجتمع المدرسي\tC1-3\t1-3-1-1\tتعزِّز المدرسة بناء العلاقات الإيجابية والتعاون في المجتمع المدرسي.\t1\nالمجتمع المدرسي\tC1-3\t1-3-1-2\tتعزِّز المدرسة مشاركة الأسرة في تعلم أطفالهم، والتحضير للمستقبل.\t2\nالمجتمع المدرسي\tC1-3\t1-3-1-3\tتعزِّز المدرسة الشراكة المجتمعية لدعم التعلم والتأثير الإيجابي في المجتمع.\t3\nالتطوير المؤسسي\tC1-4\t1-4-1-1\tتوفِّر المدرسة كادراً تعليمياً كفؤاً ومؤهلاً بما يتسق مع المهام الموكلة له.\t1\nالتطوير المؤسسي\tC1-4\t1-4-1-2\tتوفِّر المدرسة كادراً إدارياً كفؤاً ومؤهلاً بما يتسق مع المهام الموكلة له.\t2\nالتطوير المؤسسي\tC1-4\t1-4-1-3\tتُظهِر المدرسة الملاءة والاستدامة المالية.\t3\nالتطوير المؤسسي\tC1-4\t1-4-1-4\tتدعم المدرسة منسوبيها للحصول على الرخصة المهنية، وتتابعها.\t4\nالتطوير المؤسسي\tC1-4\t1-4-1-5\tتدعم المدرسة التطوير المهني لمنسوبيها وفقاً لنتائج التقويم واحتياجاتهم.\t5\nالتطوير المؤسسي\tC1-4\t1-4-1-6\tتطبِّق المدرسة التقويم الذاتي المبنيَّ على المعايير المعتمدة من الهيئة بشكل مستمر.\t6\nالتطوير المؤسسي\tC1-4\t1-4-1-7\tتنفِّذ المدرسة خطة التحسين بناءً على نتائج التقويم المدرسي، وتتابعها.\t7\nحقوق الطفل وحمايته\tC1-5\t1-5-1-1\tتلتزم المدرسة بالمحافظة على حقوق الأطفال، وحمايتهم.\t1\nحقوق الطفل وحمايته\tC1-5\t1-5-1-2\tتوفِّر المدرسة مناخاً آمناً للتعلم والنمو نفسياً واجتماعياً.\t2\nحقوق الطفل وحمايته\tC1-5\t1-5-1-3\tتلتزم المدرسة بالمحافظة على صحة الأطفال.\t3\n",
+  "stderr": "",
+  "execution_time_ms": 52
+}

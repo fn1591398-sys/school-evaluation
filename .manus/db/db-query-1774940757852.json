@@ -1,0 +1,9 @@
+{
+  "query": "\nUPDATE indicators SET text = 'تنشر المدرسة قواعد السلوك والمواظبة، وتتابع تطبيقها.' WHERE code = '1-2-1-4';\n",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway05.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 4PFkqq5z4RnsRyE.47d61a0db41b --database Hqj5hFEzvtuPEL7dFjnaUS --execute \nUPDATE indicators SET text = 'تنشر المدرسة قواعد السلوك والمواظبة، وتتابع تطبيقها.' WHERE code = '1-2-1-4';\n",
+  "rows": [],
+  "messages": [],
+  "stdout": "",
+  "stderr": "",
+  "execution_time_ms": 55
+}

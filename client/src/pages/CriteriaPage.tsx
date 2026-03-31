@@ -88,10 +88,15 @@ export default function CriteriaPage() {
                         {idx + 1}
                       </div>
                       <div className="flex-1">
-                        <div className="flex items-center gap-2 mb-1">
+                        <div className="flex items-center gap-2 mb-1 flex-wrap">
                           <span className="text-xs font-mono font-bold text-blue-600 bg-blue-50 px-2 py-0.5 rounded" dir="ltr">
                             {indicator.code}
                           </span>
+                          {indicator.isPrivate === 1 && (
+                            <span className="text-xs font-bold px-2 py-0.5 rounded-full bg-orange-100 text-orange-600 border border-orange-200">
+                              ★ خاص بالمدارس الأهلية
+                            </span>
+                          )}
                         </div>
                         <p className="text-sm text-gray-700 leading-relaxed group-hover:text-blue-800">{indicator.text}</p>
                       </div>

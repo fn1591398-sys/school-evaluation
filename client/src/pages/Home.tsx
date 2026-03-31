@@ -26,7 +26,7 @@ export default function Home() {
           <div className="flex items-center gap-3">
             <div className="flex items-center justify-center rounded-xl p-2"
               style={{ background: "linear-gradient(135deg, #0f2557, #1e3a8a)", width: 64, height: 64 }}>
-              <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663491308597/Hqj5hFEzvtuPEL7dFjnaUS/moe-logo-white-transparent_5587340c.png" alt="وزارة التعليم" className="object-contain" style={{ width: 52, height: 52 }} />
+              <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663491308597/Hqj5hFEzvtuPEL7dFjnaUS/moe-logo-new-white_4692fc71.png" alt="وزارة التعليم" className="object-contain" style={{ width: 52, height: 52 }} />
             </div>
             <div>
               <div className="text-xs text-amber-600 font-semibold">التقويم الذاتي</div>
@@ -55,10 +55,20 @@ export default function Home() {
           style={{ background: "radial-gradient(circle, #f59e0b, transparent)", transform: "translate(30%, 30%)" }} />
 
         <div className="max-w-4xl mx-auto text-center relative z-10">
-          {/* Logo/Badge */}
-          <div className="inline-flex items-center gap-3 bg-white/10 backdrop-blur border border-white/20 rounded-full px-5 py-2 mb-6 text-white text-sm font-medium">
-            <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663491308597/Hqj5hFEzvtuPEL7dFjnaUS/moe-logo-white-transparent_5587340c.png" alt="وزارة التعليم" className="w-8 h-8 object-contain" />
+          {/* Logo/Badge - وزارة التعليم */}
+          <div className="inline-flex items-center gap-3 bg-white/10 backdrop-blur border border-white/20 rounded-full px-5 py-2 mb-4 text-white text-sm font-medium">
+            <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663491308597/Hqj5hFEzvtuPEL7dFjnaUS/moe-logo-new-white_4692fc71.png" alt="وزارة التعليم" className="w-8 h-8 object-contain" />
             <span>البرنامج الوطني للتقويم والاعتماد المدرسي</span>
+          </div>
+          {/* شعار هيئة تقويم التعليم والتدريب */}
+          <div className="flex justify-center mb-6">
+            <div className="bg-white/10 backdrop-blur border border-white/20 rounded-2xl px-6 py-3 flex items-center gap-3">
+              <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663491308597/Hqj5hFEzvtuPEL7dFjnaUS/etec-logo-transparent_b1620fbd.png" alt="هيئة تقويم التعليم والتدريب" className="object-contain" style={{ width: 56, height: 56 }} />
+              <div className="text-right">
+                <div className="text-white font-bold text-sm">هيئة تقويم التعليم والتدريب</div>
+                <div className="text-white/70 text-xs">Education &amp; Training Evaluation Commission</div>
+              </div>
+            </div>
           </div>
 
           <h1 className="text-3xl md:text-5xl font-extrabold text-white mb-4 leading-tight">

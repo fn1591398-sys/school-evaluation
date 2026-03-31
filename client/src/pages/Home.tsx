@@ -85,7 +85,7 @@ export default function Home() {
             {[
               { label: "مجالات", value: "4" },
               { label: "معايير", value: "11" },
-              { label: "مؤشراً", value: "50+" },
+              { label: "مؤشراً", value: "52" },
             ].map((stat) => (
               <div key={stat.label} className="bg-white/10 backdrop-blur border border-white/20 rounded-xl px-6 py-3 text-center">
                 <div className="text-2xl font-extrabold text-amber-400">{stat.value}</div>

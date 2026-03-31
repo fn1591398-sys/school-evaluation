@@ -62,7 +62,7 @@ export default function Home() {
           {/* شعار هيئة تقويم التعليم والتدريب */}
           <div className="flex justify-center mb-6">
             <div className="bg-white/10 backdrop-blur border border-white/20 rounded-2xl px-6 py-3 flex items-center gap-3">
-              <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663491308597/Hqj5hFEzvtuPEL7dFjnaUS/etec-logo-transparent_b1620fbd.png" alt="هيئة تقويم التعليم والتدريب" className="object-contain" style={{ width: 56, height: 56 }} />
+              <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663491308597/Hqj5hFEzvtuPEL7dFjnaUS/etec-logo-hq_7105e733.png" alt="هيئة تقويم التعليم والتدريب" className="object-contain" style={{ width: 72, height: 72 }} />
               <div className="text-right">
                 <div className="text-white font-bold text-sm">هيئة تقويم التعليم والتدريب</div>
                 <div className="text-white/70 text-xs">Education &amp; Training Evaluation Commission</div>

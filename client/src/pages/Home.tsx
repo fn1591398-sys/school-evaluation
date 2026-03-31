@@ -24,9 +24,9 @@ export default function Home() {
       <header className="bg-white shadow-sm border-b border-amber-200 sticky top-0 z-50">
         <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <div className="w-12 h-12 rounded-full flex items-center justify-center text-2xl"
-              style={{ background: "linear-gradient(135deg, #1e3a6e, #2563eb)" }}>
-              🏫
+            <div className="flex items-center justify-center rounded-xl p-2"
+              style={{ background: "linear-gradient(135deg, #0f2557, #1e3a8a)", width: 64, height: 64 }}>
+              <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663491308597/Hqj5hFEzvtuPEL7dFjnaUS/moe-logo-white-transparent_5587340c.png" alt="وزارة التعليم" className="object-contain" style={{ width: 52, height: 52 }} />
             </div>
             <div>
               <div className="text-xs text-amber-600 font-semibold">التقويم الذاتي</div>
@@ -56,8 +56,8 @@ export default function Home() {
 
         <div className="max-w-4xl mx-auto text-center relative z-10">
           {/* Logo/Badge */}
-          <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur border border-white/20 rounded-full px-5 py-2 mb-6 text-white text-sm font-medium">
-            <span>🎓</span>
+          <div className="inline-flex items-center gap-3 bg-white/10 backdrop-blur border border-white/20 rounded-full px-5 py-2 mb-6 text-white text-sm font-medium">
+            <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663491308597/Hqj5hFEzvtuPEL7dFjnaUS/moe-logo-white-transparent_5587340c.png" alt="وزارة التعليم" className="w-8 h-8 object-contain" />
             <span>البرنامج الوطني للتقويم والاعتماد المدرسي</span>
           </div>
 

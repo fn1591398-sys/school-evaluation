@@ -7,6 +7,7 @@ type NetlifyEvent = {
   isBase64Encoded: boolean;
   path: string;
   rawQuery: string;
+  rawUrl?: string;
 };
 
 /**
@@ -15,9 +16,10 @@ type NetlifyEvent = {
  * connected to the shared Supabase data and evidence storage.
  */
 export async function handler(event: NetlifyEvent) {
-  const apiPath = event.path.replace(/^\/.netlify\/functions\/api/, "");
+  const incomingUrl = event.rawUrl ? new URL(event.rawUrl) : null;
+  const apiPath = (incomingUrl?.pathname ?? event.path).replace(/^\/.netlify\/functions\/api/, "");
   const upstreamUrl = new URL(apiPath || "/", upstreamOrigin);
-  upstreamUrl.search = event.rawQuery;
+  upstreamUrl.search = incomingUrl?.search || (event.rawQuery ? `?${event.rawQuery}` : "");
 
   const response = await fetch(upstreamUrl, {
     method: event.httpMethod,

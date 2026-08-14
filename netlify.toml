@@ -8,7 +8,7 @@
 
 [[redirects]]
   from = "/api/*"
-  to = "https://ibn-jauzi-hqj5hfez.manus.space/api/:splat"
+  to = "/.netlify/functions/api/api/:splat"
   status = 200
   force = true
 

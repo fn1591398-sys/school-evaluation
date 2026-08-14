@@ -1,14 +1,44 @@
-import express from "express";
-import { createExpressMiddleware } from "@trpc/server/adapters/express";
-import serverless from "serverless-http";
-import { registerOAuthRoutes } from "../../server/_core/oauth";
-import { createContext } from "../../server/_core/context";
-import { appRouter } from "../../server/routers";
+const upstreamOrigin = "https://ibn-jauzi-hqj5hfez.manus.space";
 
-const app = express();
-app.use(express.json({ limit: "50mb" }));
-app.use(express.urlencoded({ limit: "50mb", extended: true }));
-registerOAuthRoutes(app);
-app.use("/api/trpc", createExpressMiddleware({ router: appRouter, createContext }));
+type NetlifyEvent = {
+  body: string | null;
+  headers: Record<string, string | undefined>;
+  httpMethod: string;
+  isBase64Encoded: boolean;
+  path: string;
+  rawQuery: string;
+};
 
-export const handler = serverless(app, { basePath: "/.netlify/functions/api" });
+/**
+ * Keeps the Netlify copy free of private storage credentials. All dynamic
+ * operations are forwarded to the primary Manus service, which is already
+ * connected to the shared Supabase data and evidence storage.
+ */
+export async function handler(event: NetlifyEvent) {
+  const apiPath = event.path.replace(/^\/.netlify\/functions\/api/, "");
+  const upstreamUrl = new URL(apiPath || "/", upstreamOrigin);
+  upstreamUrl.search = event.rawQuery;
+
+  const response = await fetch(upstreamUrl, {
+    method: event.httpMethod,
+    headers: {
+      accept: event.headers.accept ?? "application/json",
+      "content-type": event.headers["content-type"] ?? "application/json",
+      cookie: event.headers.cookie ?? "",
+    },
+    body:
+      event.body && !["GET", "HEAD"].includes(event.httpMethod)
+        ? event.isBase64Encoded
+          ? Buffer.from(event.body, "base64")
+          : event.body
+        : undefined,
+  });
+
+  return {
+    statusCode: response.status,
+    headers: {
+      "content-type": response.headers.get("content-type") ?? "application/json",
+    },
+    body: await response.text(),
+  };
+}

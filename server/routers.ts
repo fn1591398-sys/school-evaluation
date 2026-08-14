@@ -3,11 +3,10 @@ import { getSessionCookieOptions } from "./_core/cookies";
 import { systemRouter } from "./_core/systemRouter";
 import { publicProcedure, router } from "./_core/trpc";
 import { getDb } from "./db";
-import { criteria, domains, evidences, indicators } from "../drizzle/schema";
+import { criteria, domains, indicators } from "../drizzle/schema";
 import { eq, asc } from "drizzle-orm";
 import { z } from "zod";
-import { storagePut, storageGet } from "./storage";
-import type { Evidence } from "../drizzle/schema";
+import { deleteSharedEvidence, listSharedEvidences, uploadSharedEvidence } from "./supabaseEvidenceStorage";
 
 export const appRouter = router({
   system: systemRouter,
@@ -20,7 +19,6 @@ export const appRouter = router({
     }),
   }),
 
-  // المجالات
   domains: router({
     list: publicProcedure.query(async () => {
       const db = await getDb();
@@ -37,7 +35,6 @@ export const appRouter = router({
       }),
   }),
 
-  // المعايير
   criteria: router({
     byDomain: publicProcedure
       .input(z.object({ domainId: z.number() }))
@@ -58,7 +55,6 @@ export const appRouter = router({
       }),
   }),
 
-  // المؤشرات
   indicators: router({
     byCriteria: publicProcedure
       .input(z.object({ criteriaId: z.number() }))
@@ -79,27 +75,10 @@ export const appRouter = router({
       }),
   }),
 
-  // الشواهد
   evidences: router({
     byIndicator: publicProcedure
       .input(z.object({ indicatorId: z.number() }))
-      .query(async ({ input }) => {
-        const db = await getDb();
-        if (!db) return [];
-        const rows = await db.select().from(evidences)
-          .where(eq(evidences.indicatorId, input.indicatorId))
-          .orderBy(asc(evidences.createdAt));
-        const withUrls = await Promise.all(rows.map(async (ev: Evidence) => {
-          try {
-            const { url } = await storageGet(ev.fileKey);
-            return { ...ev, downloadUrl: url };
-          } catch {
-            return { ...ev, downloadUrl: null };
-          }
-        }));
-        return withUrls;
-      }),
-
+      .query(async ({ input }) => listSharedEvidences(input.indicatorId)),
     upload: publicProcedure
       .input(z.object({
         indicatorId: z.number(),
@@ -109,40 +88,21 @@ export const appRouter = router({
         title: z.string(),
         description: z.string().optional(),
         uploadedBy: z.string().optional(),
-        fileData: z.string(), // base64
+        fileData: z.string(),
       }))
-      .mutation(async ({ input }) => {
-        const db = await getDb();
-        if (!db) throw new Error("Database not available");
-        const ext = input.fileName.split('.').pop() || 'bin';
-        const key = `evidences/${input.indicatorId}/${Date.now()}-${Math.random().toString(36).slice(2)}.${ext}`;
-        const buffer = Buffer.from(input.fileData, 'base64');
-        await storagePut(key, buffer, input.fileType);
-        const [inserted] = await db.insert(evidences).values({
-          indicatorId: input.indicatorId,
-          title: input.title,
-          description: input.description || '',
-          fileKey: key,
-          fileName: input.fileName,
-          fileType: input.fileType,
-          fileSize: input.fileSize,
-          uploadedBy: input.uploadedBy || 'مجهول',
-        }).$returningId();
-        return { id: inserted.id, key };
-      }),
-
+      .mutation(async ({ input }) => uploadSharedEvidence({
+        indicatorId: input.indicatorId,
+        fileName: input.fileName,
+        fileType: input.fileType,
+        fileSize: input.fileSize,
+        title: input.title,
+        description: input.description || "",
+        uploadedBy: input.uploadedBy || "مجهول",
+        buffer: Buffer.from(input.fileData, "base64"),
+      })),
     delete: publicProcedure
       .input(z.object({ id: z.number() }))
-      .mutation(async ({ input }) => {
-        const db = await getDb();
-        if (!db) throw new Error("Database not available");
-        // Get file key before deleting
-        const [ev] = await db.select().from(evidences).where(eq(evidences.id, input.id));
-        await db.delete(evidences).where(eq(evidences.id, input.id));
-        // Note: S3 file deletion not supported in current storage helper
-        // The DB record is deleted; S3 file will remain until manual cleanup
-        return { success: true };
-      }),
+      .mutation(async ({ input }) => deleteSharedEvidence(input.id)),
   }),
 });
 
